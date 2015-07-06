@@ -1,0 +1,26 @@
+import sys
+
+output = ""
+count = 0
+x = 0 
+
+with open(sys.argv[1], 'r') as my_file:
+    while count < 999:
+        char = my_file.read(1)        
+	if (x % 2 == 0):
+	    output = output + char.upper()
+            x = x + 1
+            count = count + 1 
+        else: 
+	    output = output + char.lower()
+            x = x + 1 
+            count = count + 1 
+	if (char.isalpha() == False):
+            x = x + 1
+        if  char == '\n': 
+            x = 0
+            count = count - 1
+            
+                     
+print output
+my_file.close()
